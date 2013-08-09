@@ -18,14 +18,15 @@
 		<r:layoutResources />
 	</head>
 	<body>
-		<div id="grailsLogo" role="banner">
+		<div id="grailsLogo" class="content" role="banner">
 			<%--<a href="http://grails.org"><img src="${resource(dir: 'images', file: 'grails_logo.png')}" alt="Grails"/></a>--%>
 			<br/>
-			<header>
-				<h1>Connect Four Sample App</h1>
-			</header>
+			<br/>
 			
 		</div>
+		<header>
+				<h1>Connect Four Sample App</h1>
+			</header>
 		<div class="nav" role="navigation">
 			<div class="nav" role="navigation">
   			<p>Connect Four (also known as Captain's Mistress, Four Up, Plot Four, Find Four, Fourplay, Four in a Row and Four in a Line) 

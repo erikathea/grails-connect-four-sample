@@ -26,10 +26,10 @@ function insertToken (row, col) {
 function getPlayerColor () {
 	var clicks = document.getElementById("clicks").value;
 	if (clicks % 2 == 0) {		
-		return "red"; // Player A
+		return 'rgb(248, 93, 93)'; // Player A
 	}
 	else {
-		return "blue"; //Player B
+		return 'rgb(97, 97, 255)'; //Player B
 	}
 }
 

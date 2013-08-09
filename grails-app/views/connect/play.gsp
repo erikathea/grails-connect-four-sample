@@ -17,7 +17,7 @@
   		<table id="tallyboard">
   			<thead>
   			<tr>
-  				<td id="playerCellA" style="color:red">
+  				<td id="playerCellA" style="color:rgb(248, 93, 93)">
   					Player: ${playerA }
   				</td>
   				<td id="playerCellB" style="color:blue"> 
@@ -26,7 +26,7 @@
   			<tr/>
   			</thead>
   			<tr>
-  				<td id="turnCell" style="background:red" colspan="2">
+  				<td id="turnCell" style="background:rgb(248, 93, 93)" colspan="2">
   					<h1 style="color:white">TURN</h1>
   				</td>
   			<tr/>
