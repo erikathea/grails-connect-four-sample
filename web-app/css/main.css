@@ -399,7 +399,7 @@ input:invalid:focus, select:invalid:focus, textarea:invalid:focus {
 /* TABLES */
 
 table {
-	border: 1px solid #DFDFDF;
+	border: 3px solid #DFDFDF;
 	border-collapse: collapse;
 	width: 100%;
 	margin-bottom: 1em;
@@ -522,7 +522,8 @@ th:hover, tr:hover {
 /* ACTION BUTTONS */
 
 .buttons {
-	background-color: #efefef;
+	background-color: #fff;
+	color:#fff;
 	overflow: hidden;
 	padding: 0.3em;
 	   -moz-box-shadow: 0 0 3px 1px #aaaaaa;
@@ -530,6 +531,8 @@ th:hover, tr:hover {
 	        box-shadow: 0 0 3px 1px #aaaaaa;
 	margin: 0.1em 0 0 0;
 	border: none;
+	border-radius:100px; -moz-border-radius: 100px; -webkit-border-radius: 100px; -khtml-border-radius: 100px;
+	text-align:center;
 }
 
 .buttons input,
