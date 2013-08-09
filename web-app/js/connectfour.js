@@ -16,7 +16,7 @@ function insertToken (row, col) {
     	if(cell == ""){
     		document.getElementById(i+"_"+col).style.background = getPlayerColor ();
     		//inserted token virtually - the cell is played
-    		document.getElementById(id).value = "played"
+    		document.getElementById(id).value = getPlayerName ();
     		break;
     	}
     }
@@ -33,6 +33,16 @@ function getPlayerColor () {
 	}
 }
 
+function getPlayerName () {
+	var clicks = document.getElementById("clicks").value;
+	if (clicks % 2 == 0) {
+		return document.getElementById("playerCellA").innerText;
+	}
+	else {
+		return document.getElementById("playerCellB").innerText;
+	}
+}
+
 function updateGameboard () {
 	// add click count
 	var clicks = document.getElementById("clicks").value;
@@ -42,8 +52,13 @@ function updateGameboard () {
 	var cell = document.getElementById("turnCell").style.background = getPlayerColor ();
 }
 
-
-
+function end () {
+	alert("Wuzzaaa! "+ getPlayerName() + " win!" );
+	var buttons = document.getElementsByClassName("cellButton buttons"); 
+	for (var i = 0; i < buttons.length; i++) {
+		buttons[i].disabled = true;
+	};
+}
 
 function checkForWinner () {
 	var rows = document.getElementById("board").rows.length;
@@ -61,22 +76,22 @@ function checkForWinner () {
 	    	
 	    	//check for connected cells
 	    	if(isHorizontallyConnected(x, y)) {
-	    		alert("wuzzaaa");
+	    		end();
 	    		return;
 	    	}
 	    	
 	    	else if(isVerticallyConnected(x, y)) {
-	    		alert("huwooo");
+	    		end();
 	    		return;
 	    	} 
 	    	
 	    	else if (isDiagonallyUpwardConnected(x, y)) {
-	    		alert("yeeepiiee");
+	    		end();
 	    		return;
 	    	}
 	    	
 	    	else if (isDiagonallyDownwardConnected(x, y)) {
-	    		alert("yooosh");
+	    		end();
 	    		return;
 	    	};
 		}
@@ -91,13 +106,15 @@ function isHorizontallyConnected (row, col) {
 		return false;
 	}
 	
+	var player = getPlayerName();
+	
 	for (var y = 0; y < 4 ; y++) {
 		var id = "played_"+row+"_"+ (col+y)
 		var cell = document.getElementById(id).value;
-		if(cell == "") {
+		
+		if(cell == "" || cell != player) {
 			return false;
 		}
-	    	
 	}
 		
 	return true;
@@ -108,10 +125,12 @@ function isVerticallyConnected (row, col) {
 		return false;
 	}
 	
+	var player = getPlayerName();
+	
 	for (var x = 0; x < 4; x++) {
 		var id = "played_"+(row-x)+"_"+col
 		var cell = document.getElementById(id).value;
-		if(cell == "") {
+		if(cell == "" || cell != player) {
 			return false;
 		}
 	    	
@@ -126,11 +145,13 @@ function isDiagonallyUpwardConnected (row, col) {
 		return false;
 	}
 	
+	var player = getPlayerName();
+	
 	for (var z = 0; z < 4; z++) {
 		var id = "played_"+(row-z)+"_"+(col+z)
 		//alert(id);
 		var cell = document.getElementById(id).value;
-		if(cell == "") {
+		if(cell == "" || cell != player) {
 			return false;
 		}
 	    	
@@ -141,14 +162,16 @@ function isDiagonallyUpwardConnected (row, col) {
 
 function isDiagonallyDownwardConnected (row, col) {
 	var cols = document.getElementById('board').rows[0].cells.length;
-	if(col-4 > cols || row-3 < 0) {
+	if(col-4 < cols || row-3 < 0) {
 		return false;
 	}
+	
+	var player = getPlayerName();
 	
 	for (var z = 0; z < 4; z++) {
 		var id = "played_"+(row-z)+"_"+(col-z)
 		var cell = document.getElementById(id).value;
-		if(cell == "") {
+		if(cell == "" || cell != player) {
 			return false;
 		}
 	    	

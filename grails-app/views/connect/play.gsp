@@ -13,15 +13,16 @@
 </head>
 <body>
   <div class="body">
-  	<div>
+  <%--<button onclick="end()"> End </button>
+  	--%><div>
   		<table id="tallyboard">
   			<thead>
   			<tr>
   				<td id="playerCellA" style="color:rgb(248, 93, 93)">
-  					Player: ${playerA }
+  					${playerA }
   				</td>
   				<td id="playerCellB" style="color:blue"> 
-  					Player: ${playerB }
+  					${playerB }
   				</td>
   			<tr/>
   			</thead>
