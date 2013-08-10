@@ -39,7 +39,7 @@
   		<g:each in="${board.cells}" var="cell">
   			<td class="${cell.y}">
   				<button class="cellButton buttons" id="${cell.x}_${cell.y}" onclick="play(${cell.x}, ${cell.y})">
-  				${cell.x} ${cell.y}
+  				o
   				<input type="hidden" id="played_${cell.x}_${cell.y}" value="${cell.played}" /> 
   				</button>
   			</td>
