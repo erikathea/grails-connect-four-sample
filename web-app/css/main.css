@@ -597,3 +597,25 @@ a.skip {
 	position: absolute;
 	left: -9999px;
 }
+
+.player-a {
+	background: rgb(248, 93, 93);
+	color: rgb(248, 93, 93);
+}
+
+.player-b {
+	background: rgb(20, 8, 184);
+	color: rgb(20, 8, 184);
+}
+
+.text-white {
+	color: white;
+}
+
+.text-blue {
+	color: rgb(20, 8, 184);
+}
+
+.text-red {
+	color: rgb(248, 93, 93);
+}
